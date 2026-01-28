@@ -21,6 +21,8 @@ process data in parallel and return aggregated results to the coordinator.
 The system is based on a distributed **Master–Worker** model.
 The coordinator assigns tasks to worker nodes, which process data in parallel and return
 aggregated results. Clients interact with the system through a Java-based interface.
+![Distributed Booking Platform Architecture](assets/architecture.png)
+
 
 ## Tech Stack
 - Java
