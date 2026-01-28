@@ -40,3 +40,19 @@ aggregated results. Clients interact with the system through a Java-based interf
 - Handling concurrency and parallel execution in Java
 - Writing maintainable and structured backend-oriented code
 
+flowchart LR
+  Manager[Manager Console (Java UI)] -->|TCP sockets| Master[Master / Coordinator]
+  Android[Android Client] -->|TCP sockets| Master
+
+  Master -->|dispatch tasks| W1[Worker 1]
+  Master -->|dispatch tasks| W2[Worker 2]
+  Master -->|dispatch tasks| W3[Worker N]
+
+  W1 -->|partial results| Master
+  W2 -->|partial results| Master
+  W3 -->|partial results| Master
+
+  Master -->|aggregated results| Android
+  Master -->|status / confirmations| Manager
+
+
